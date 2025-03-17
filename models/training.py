@@ -1,5 +1,4 @@
 import tensorflow as tf
-import matplotlib.pyplot as plt
 
 
 def train_model():
@@ -48,19 +47,12 @@ def train_model():
     return model, history
 
 
-def plot_result(model, history):
-    """
-    Plot the training and validation accuracy and loss
-    """
+if __name__ == "__main__":
+    model, history = train_model()
     print(f"The learning rate is {model.optimizer.learning_rate.numpy():.3e}")
     print(f"The loss function is {model.loss.name}")
     print(f"The number of epochs is {len(history.history['accuracy'])}")
     print(f"The optimizer is {model.optimizer.get_config()['name']}")
-
-
-if __name__ == "__main__":
-    model, history = train_model()
-    plot_result(model, history)
 
     # Save the model
     model.save("mnist_model.h5")

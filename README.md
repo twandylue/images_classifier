@@ -5,7 +5,7 @@ Using a pre-trained image classifier of CNN to identify images. You can upload t
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ## Usage
